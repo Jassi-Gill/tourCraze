@@ -32,7 +32,7 @@ export-env {
       }
     }
 
-    let virtual_env = 'D:\VOLDER\PROJECTS\tourCraze\venv'
+    let virtual_env = 'D:\VOLDER\PROJECTS\tourCraze\tourCraze\venv'
     let bin = 'Scripts'
 
     let is_windows = ($nu.os-info.family) == 'windows'
