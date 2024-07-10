@@ -23,4 +23,3 @@ from django.db import models
 #         default = 0,
 #     )
 #     emgCon = models.ForeignKey("EmgCon", on_delete= models.SET_NULL, null = True)
-    
