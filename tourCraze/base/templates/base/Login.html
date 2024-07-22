@@ -13,23 +13,26 @@
 <body>
     <div class="cimage">
         <img src="{% static 'images/coverimage.jpg' %}" alt="Engineering">
-        <div class="login-container">
-            <form class="login-form">
-                <h2>Welcome to TourCraze</h2>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <button type="submit">Login</button>
-                <div class="divider">or</div>
-                <button type="button" class="google-login-button" onclick="loginWithGoogle()">
+    </div>
+
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Welcome to TourCraze</h2>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+            <!-- <div class="divider">or</div> -->
+            <!-- <button type="button" class="google-login-button" onclick="loginWithGoogle()">
                     <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
                     Login with Google
-                </button>
-
-            </form>
-        </div>
+                </button> -->
+            <p class="label-custom">Don't have an account!</p>
+            <p class="label-custom1"><a href="register.html" class="new-user">Register Here</a></p>
+        </form>
     </div>
+
 
     <script>
         function loginWithGoogle() {
