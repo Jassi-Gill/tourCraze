@@ -1,13 +1,14 @@
 body {
-    /* background-color: #4283de; */
-    background-image: url('coverimage.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 97vh;
+}
+
+.cimage {
+    background-size: cover; /* Makes the background cover the entire area */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-position: center; /* Centers the background image */
+    background-attachment: fixed; 
 }
 
 .login-container {
@@ -55,7 +56,7 @@ body {
     background-color: #3573bd;
 }
 
-.divider{
+.divider {
     text-align: center;
     margin: 20px 0;
     font-size: 14px;
@@ -106,19 +107,25 @@ body {
     background-color: #f7f7f7;
 }
 
-.new-user{
+.new-user {
     text-decoration: none;
-    color: #fcf9f9;
+    color: #F8C922;
+    width: 95px;
+
 }
 
-.new-user:hover{
-    color: #acaeb0;
+.new-user:hover {
+    color: #f9ee0e;
 }
 
-.heading{
+.heading {
     color: #ffffff;
 }
 
-.label-custom{
+.label-custom {
     color: #ffffff;
+}
+
+.label-custom1 {
+    margin-top: 0px;
 }
