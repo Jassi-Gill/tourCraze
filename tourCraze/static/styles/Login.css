@@ -1,7 +1,8 @@
 body {
+    display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 97vh; */
+    height: 100vh;
 }
 
 .cimage {
@@ -75,6 +76,7 @@ body {
 }
 
 .divider::before,
+
 .divider::after {
     content: "";
     height: 1px;
@@ -133,9 +135,17 @@ body {
 }
 
 .label-custom {
+    font-size: larger;
+    text-align: center;
     color: #ffffff;
 }
 
 .label-custom1 {
+    display: inline-block;
+    font-size: 28px;
+    text-align: center;
+    color: #ffffff;
     margin-top: 0px;
+    background-color: hsl(0, 0%, 87%, .5);
+    border-radius: 5px;
 }

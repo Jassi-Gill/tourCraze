@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" type="text/css" href="Login.css">
 </head>
+
 <body>
-        <div class="login-container">
-            <form class="login-form">
-                <h2 class="heading">Welcome to TourCraze</h2>
-                <label for="email" class="label-custom">Email:</label>
-                <input type="email" id="email" name="email" required placeholder="Enter your Email">
-                
-                <label for="password" class="label-custom">Password:</label>
-                <input type="password" id="password" name="password" required placeholder="Enter your password">
-                
-                <button type="submit">Login</button>
+    <div class="login-container">
+        <form class="login-form">
+            <h2 class="heading">Welcome to TourCraze</h2>
+            <label for="email" class="label-custom">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your Email">
 
-                <div class="divider">or</div>
+            <label for="password" class="label-custom">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
 
-                <button type="button" class="google-login-button" onclick="loginWithGoogle()">
-                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
-                    Login with Google
-                </button>
+            <button type="submit">Login</button>
 
-                <p class="label-custom">Don't have an account!</p>
-                <p class="label-custom1"><a href="register.html" class="new-user" >Register Here</a></p>
+            <div class="divider">or</div>
 
-            </form>
-        </div>
+            <button type="button" class="google-login-button" onclick="loginWithGoogle()">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
+                Login with Google
+            </button>
 
-        <script>
-            function loginWithGoogle() {
-                // Implement Google login logic here
-                alert("Google login not implemented");
-            }
-        </script>
-        
+            <p class="label-custom">Don't have an account!</p>
+            <p class="label-custom1"><a href="register.html" class="new-user">Register Here</a></p>
+
+        </form>
+    </div>
+
+    <script>
+        function loginWithGoogle() {
+            // Implement Google login logic here
+            alert("Google login not implemented");
+        }
+    </script>
+
 </body>
+
 </html>
