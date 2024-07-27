@@ -1,9 +1,9 @@
-.navbar-brand-custom{
+.navbar-brand-custom {
     color: #ffffff !important;
     font-weight: bold;
 }
 
-body{
+body {
     padding: 0%;
     margin: 0%;
 }
@@ -14,4 +14,21 @@ body{
 
 .custom-toggler {
     border-color: #ffffff !important;
+}
+
+.avatar {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px;
+}
+.avatar1 img{
+    size: 2%;
+}
+
+.avatar img {
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }

@@ -35,8 +35,6 @@ def register_page(request):
         form.password1 = request.POST.get("password1")
         form.password2 = request.POST.get("password2")
 
-        print(form.username, form.name, form.email, form.password1, form.password2)
-
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
@@ -48,7 +46,17 @@ def register_page(request):
     context = {"form": form}
     return render(request, "base/register_page.html", context)
 
-
+@login_required(login_url='login_page')
 def home_page(request):
     context = {}
     return render(request, "base/home_page.html", context)
+
+@login_required(login_url='login_page')
+def community(request, pk):
+    context = {pk: pk}
+    return render(request, "base/community.html", context)
+
+@login_required(login_url='login_page')
+def tours(request, pk):
+    context = {pk: pk}
+    return render(request, "base/tours.html", context)
