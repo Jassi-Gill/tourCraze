@@ -36,6 +36,14 @@
                 <label for="password">Confirm Password</label>
                 <input type="password" id="password2" name="password2" required>
 
+                <!-- {% for field in form %}
+                <div>
+                    <label>{{field.label}}</label>
+                    <br>
+                    {{field}}
+                </div>
+                {% endfor %} -->
+
                 {% if messages %}
                 <ul class="messages">
                     {% for message in messages %}
