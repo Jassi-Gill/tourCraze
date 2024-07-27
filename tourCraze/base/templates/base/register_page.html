@@ -36,6 +36,14 @@
                 <label for="password">Confirm Password</label>
                 <input type="password" id="password2" name="password2" required>
 
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
                 <div class="sub-button">
                     <button type="submit">Submit</button>
                 </div>
