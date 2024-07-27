@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "base.apps.BaseConfig",
 ]
 
-AUTH_USER_MODEL = "base.User"
+AUTH_USER_MODEL = "base.CusUser"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,7 +118,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
