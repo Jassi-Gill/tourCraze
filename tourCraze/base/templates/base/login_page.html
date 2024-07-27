@@ -18,7 +18,9 @@
 
         <div class="login-container">
 
-            <form class="login-form">
+            <form class="login-form" method="POST">
+                {% csrf_token %}
+                
                 <h2>Welcome to TourCraze</h2>
 
                 <label for="email">Email:</label>
@@ -27,8 +29,18 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
 
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
                 <button type="submit">Login</button>
+
                 <div class="divider">OR</div>
+
                 <!-- <button type="button" class="google-login-button" onclick="loginWithGoogle()">
                     <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
                     Login with Google
