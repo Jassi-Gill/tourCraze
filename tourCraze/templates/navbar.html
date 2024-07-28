@@ -31,23 +31,21 @@
 						<a class="nav-link" href="#">Maps</a>
 					</li>
 				</ul>
-				<form class="d-flex" role="search">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn btn-outline-success" type="submit">Search</button>
-				</form>
-				{% if request.user.is_authenticated %}
-				<a href="#">
-					<div class="avatar">
-						<img class="avatar1" src="{{request.user.avatar.url}}" />
-					</div>
-					<p>{{request.user.name}}<span>@{{request.user.username}}</span></p>
-				</a>
-				{% else %}
-				<a href="{% url 'login' %}">
-					<img src="{% static 'images/avatar.svg' %}" />
-					<p>Login</p>
-				</a>
-				{% endif %}
+				<div class="style-search">
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-success" type="submit">Search</button>
+					</form>
+					<a href="#">
+						<div class="avatar">
+							<img class="avatar1" src="{{request.user.avatar.url}}" />
+						</div>
+						<div>
+							<p>{{request.user.name}}</p>
+							<span class = "block-span">@{{request.user.username}}</span>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
 	</nav>	
