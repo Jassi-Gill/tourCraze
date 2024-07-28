@@ -60,3 +60,10 @@ def community(request, pk):
 def tours(request, pk):
     context = {pk: pk}
     return render(request, "base/tours.html", context)
+
+@login_required(login_url='login_page')
+def update_user(request, pk):
+    if(request.user.username != pk):
+        redirect(request, "base/home_page.html")
+    context = {pk: pk}
+    return render(request, "base/tours.html", context)

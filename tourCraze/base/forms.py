@@ -10,4 +10,4 @@ class MyUserCreationForm(UserCreationForm):
 class UpdateUser(ModelForm): 
     class Meta:
         model = CusUser
-        fields  = ["name", "username",  "email", "bio"]
+        fields  = ["name", "avatar", "username",  "email", "bio"]

@@ -7,4 +7,5 @@ urlpatterns = [
     path("home/", views.home_page , name="home_page"),
     path("community/<str:pk>", views.community , name="community"),
     path("tours/<str:pk>", views.tours , name="tours"),
+    path("tours/<str:pk>", views.update_user , name="update_user"),
 ]
