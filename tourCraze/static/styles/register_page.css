@@ -41,11 +41,13 @@ body {
 
 .register-form h2 {
     margin-bottom: 20px;
+    color: #ffffff;
 }
 
 .register-form label {
     margin-bottom: 5px;
     font-weight: bold;
+    color: #ffffff;
 }
 
 .register-form input {
@@ -120,7 +122,7 @@ body {
     font-size: 28px;
     color: #ffffff;
     margin-top: 0px;
-    background-color: hsl(0, 0%, 87%, .5);
+    background-color: hsla(0, 0%, 100%, 0.5);
     border-radius: 5px;
     max-width:fit-content;
     padding: 2px;
