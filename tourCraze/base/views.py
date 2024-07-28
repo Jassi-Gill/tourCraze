@@ -59,14 +59,13 @@ def update_user(request, pk):
         form = UpdateUser(request.POST, request.FILES, instance=user)
 
         if form.is_valid():
-            user = form.save(commit=False)
             user.save()
             return redirect("update_user", pk=user.username)
         else:
-            messages.error(request, "An Error occured during registration!")
+            messages.error(request, "An Error occured during Updation!")
 
-    context = {pk: pk, form: form}
-    return render(request, "base/update_user.html", context)
+    context = {"pk": pk, "form": form}
+    return render(request, "base/update_user.html",  context)
 
 
 @login_required(login_url="login_page")
@@ -77,11 +76,11 @@ def home_page(request):
 
 @login_required(login_url="login_page")
 def community(request, pk):
-    context = {pk: pk}
+    context = {"pk": pk}
     return render(request, "base/community.html", context)
 
 
 @login_required(login_url="login_page")
 def tours(request, pk):
-    context = {pk: pk}
+    context = {"pk": pk}
     return render(request, "base/tours.html", context)
