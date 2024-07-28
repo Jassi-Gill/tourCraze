@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
 from .models import CusUser
-from .forms import MyUserCreationForm
+from .forms import MyUserCreationForm, UpdateUser
 from django.http import HttpResponse
 
 
@@ -37,7 +37,6 @@ def register_page(request):
 
         if form.is_valid():
             user = form.save(commit=False)
-            user.username = user.username.lower()
             user.save()
             login(request, user)
             return redirect("home_page")
@@ -46,24 +45,43 @@ def register_page(request):
     context = {"form": form}
     return render(request, "base/register_page.html", context)
 
-@login_required(login_url='login_page')
+
+@login_required(login_url="login_page")
+def update_user(request, pk):
+    user = request.user
+
+    if request.user.username != pk:
+        redirect(request, "base/home_page.html")
+
+    form = UpdateUser(instance=user)
+
+    if request.method == "POST":
+        form = UpdateUser(request.POST, request.FILES, instance=user)
+
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.save()
+            return redirect("update_user", pk=user.username)
+        else:
+            messages.error(request, "An Error occured during registration!")
+
+    context = {pk: pk, form: form}
+    return render(request, "base/update_user.html", context)
+
+
+@login_required(login_url="login_page")
 def home_page(request):
     context = {}
     return render(request, "base/home_page.html", context)
 
-@login_required(login_url='login_page')
+
+@login_required(login_url="login_page")
 def community(request, pk):
     context = {pk: pk}
     return render(request, "base/community.html", context)
 
-@login_required(login_url='login_page')
-def tours(request, pk):
-    context = {pk: pk}
-    return render(request, "base/tours.html", context)
 
-@login_required(login_url='login_page')
-def update_user(request, pk):
-    if(request.user.username != pk):
-        redirect(request, "base/home_page.html")
+@login_required(login_url="login_page")
+def tours(request, pk):
     context = {pk: pk}
     return render(request, "base/tours.html", context)
