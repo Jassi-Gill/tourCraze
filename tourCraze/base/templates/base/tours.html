@@ -13,12 +13,73 @@
 </head>
 <body>
 	{% include 'navbar.html' %}
-
-    <div class="tours">
-        <div class="plans">
-            <h4>AK Tours</h4>
+        <div class="tours">
+            <div class="plans">
+                <h2>AK Tours</h2>
+                <div>
+                    <p class="text-left">Phone No.<span>+91xxxxxxxxxx</span></p>
+                </div>
+                <div class="trip-info">
+                    <div>
+                        <p class="text-left">Goa trip for 3 days </p>
+                    </div>
+                    <div class="right">
+                        <p class="text-right">Rs 39999</p>
+                    </div>
+                </div>
+                <div class="trip-info">
+                    <div>
+                        <p>Vehicles</p>
+                    </div>
+                    <div class="right">
+                        <p>VolvoBus, SUVs, Sedans</p>
+                    </div>
+                </div>
+    
+                <div class="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src ="mountains.jpg" alt="img 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src ="jaipur.jpg" alt="img 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src ="beach.jpg" alt="img 3">
+                        </div>
+                    </div>
+                <button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+                <button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+                </div>
+                <div>
+                    <a href="#">more details...</a>
+                </div>
+            </div>
         </div>
-    </div>
+        <script>
+            let currentIndex = 0;
+    
+            function showSlide(index) {
+                const slides = document.querySelectorAll('.carousel-item');
+                if (index >= slides.length) {
+                    currentIndex = 0;
+                } else if (index < 0) {
+                    currentIndex = slides.length - 1;
+                } else {
+                    currentIndex = index;
+                }
+                const offset = -currentIndex * 100;
+                document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+            }
+    
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+    
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+        </script>
 </body>
 </html>
 
