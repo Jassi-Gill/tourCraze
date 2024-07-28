@@ -5,4 +5,9 @@ from .models import CusUser
 class MyUserCreationForm(UserCreationForm):
     class Meta:
         model = CusUser
-        fields = ["name", "username", "email", "password1", "password2"]
+        fields = ["name", "username",  "email", "password1", "password2"]
+
+class UpdateUser(ModelForm): 
+    class Meta:
+        model = CusUser
+        fields  = ["name", "username",  "email", "bio"]
